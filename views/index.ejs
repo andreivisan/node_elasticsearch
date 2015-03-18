@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <form action='/search-results' method='post'>
+      <input type="text" name="searchTerm" placeholder="your search term here">
+      <button type="submit"> SEARCH </button>
+    </form>
+    <ul>
+      <% if(locals.results) {%>
+        <% results.forEach( function( result ) { %>
+          <li>
+            <%= result._source.title %>
+          </li>
+        <% }) %>
+      <% } %>
+    </ul>
+  </body>
+</html>
