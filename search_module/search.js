@@ -9,7 +9,7 @@ var client = elasticsearch.Client({
 module.exports.search = function(searchData, callback) {
   client.search({
     index: 'YOUR_INDEX_NAME',
-    type: 'url',
+    type: 'YOUR_TYPE',
     body: {
       query: {
         bool: {
